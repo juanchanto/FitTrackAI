@@ -143,7 +143,7 @@ const App: React.FC = () => {
       </main>
 
       <footer className="mt-20 py-8 border-t border-gray-100 dark:border-slate-900 text-center text-gray-400 dark:text-slate-600 text-sm">
-        <p>&copy; 2024 FitTrack AI. Desarrollado con Gemini.</p>
+        <p>&copy; 2026 FitTrack AI by Xtelius. Desarrollado con Gemini.</p>
       </footer>
     </div>
   );
