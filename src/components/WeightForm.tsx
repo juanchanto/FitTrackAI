@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { WeightEntry } from '../types';
+import { WeightEntry } from '@/types';
 
 interface WeightFormProps {
   onAddEntry: (entry: Omit<WeightEntry, 'id'>) => void;
@@ -26,7 +26,7 @@ const WeightForm: React.FC<WeightFormProps> = ({ onAddEntry }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 mb-6">
+    <div className="bg-white dark:bg-slate-900 p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 mb-6">
       <h3 className="text-gray-800 dark:text-white font-bold mb-6 flex items-center gap-2 text-xl">
         Nuevo Registro
       </h3>

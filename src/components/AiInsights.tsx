@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { AiInsight } from '../types';
+import { AiInsight } from '@/types';
 
 interface AiInsightsProps {
   insight: AiInsight | null;
@@ -34,7 +34,7 @@ const AiInsights: React.FC<AiInsightsProps> = ({ insight, loading }) => {
           <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
         </svg>
       </div>
-      
+
       <div className="flex items-center gap-2 mb-4">
         <div className="bg-indigo-500/30 p-2 rounded-lg">
           <svg className="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ const AiInsights: React.FC<AiInsightsProps> = ({ insight, loading }) => {
       <h4 className="text-xl font-bold mb-2 leading-tight">
         {insight.summary}
       </h4>
-      
+
       <div className="flex items-center gap-2 mb-4">
         <svg className={`w-5 h-5 ${style.color}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={style.icon} />

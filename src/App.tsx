@@ -131,7 +131,7 @@ const App: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="sticky top-24">
               <WeightForm onAddEntry={handleAddEntry} />
-              <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 mt-6">
+              <div className="bg-white dark:bg-slate-900 p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 mt-6">
                 <h4 className="font-bold text-gray-800 dark:text-slate-200 mb-2">Consejo Pro</h4>
                 <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
                   Pésate siempre a la misma hora, preferiblemente por la mañana en ayunas, para obtener los datos más consistentes.

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { WeightEntry } from '../types';
+import { WeightEntry } from '@/types';
 
 interface WeightHistoryProps {
   entries: WeightEntry[];
@@ -34,8 +34,8 @@ const WeightHistory: React.FC<WeightHistoryProps> = ({ entries, onDeleteEntry })
             {sortedEntries.map((entry) => (
               <tr key={entry.id} className="hover:bg-gray-50/50 dark:hover:bg-slate-800/30 transition-colors group">
                 <td className="px-6 py-4 text-sm text-gray-600 dark:text-slate-400 font-medium">
-                  {new Date(entry.date).toLocaleDateString('es-ES', { 
-                    day: '2-digit', 
+                  {new Date(entry.date).toLocaleDateString('es-ES', {
+                    day: '2-digit',
                     month: 'short'
                   })}
                 </td>

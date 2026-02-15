@@ -1,15 +1,15 @@
 
 import React from 'react';
-import { 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
+import {
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
   ResponsiveContainer,
   Area,
   AreaChart
 } from 'recharts';
-import { WeightEntry } from '../types';
+import { WeightEntry } from '@/types';
 
 interface WeightChartProps {
   entries: WeightEntry[];
@@ -18,14 +18,14 @@ interface WeightChartProps {
 
 const WeightChart: React.FC<WeightChartProps> = ({ entries, darkMode }) => {
   const sortedData = [...entries].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  
+
   const formattedData = sortedData.map(entry => ({
     ...entry,
-    displayDate: new Date(entry.date).toLocaleDateString('es-ES', { 
-      day: '2-digit', 
-      month: 'short' 
+    displayDate: new Date(entry.date).toLocaleDateString('es-ES', {
+      day: '2-digit',
+      month: 'short'
     }),
-    fullDate: new Date(entry.date).toLocaleDateString('es-ES', { 
+    fullDate: new Date(entry.date).toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -61,28 +61,28 @@ const WeightChart: React.FC<WeightChartProps> = ({ entries, darkMode }) => {
         <AreaChart data={formattedData}>
           <defs>
             <linearGradient id="colorWeight" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#6366f1" stopOpacity={0.2}/>
-              <stop offset="95%" stopColor="#6366f1" stopOpacity={0}/>
+              <stop offset="5%" stopColor="#6366f1" stopOpacity={0.2} />
+              <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={themeColors.grid} />
-          <XAxis 
-            dataKey="displayDate" 
+          <XAxis
+            dataKey="displayDate"
             axisLine={false}
             tickLine={false}
             tick={{ fill: themeColors.text, fontSize: 11 }}
             dy={10}
           />
-          <YAxis 
-            domain={[minWeight, maxWeight]} 
+          <YAxis
+            domain={[minWeight, maxWeight]}
             axisLine={false}
             tickLine={false}
             tick={{ fill: themeColors.text, fontSize: 11 }}
             dx={-10}
           />
-          <Tooltip 
-            contentStyle={{ 
-              borderRadius: '12px', 
+          <Tooltip
+            contentStyle={{
+              borderRadius: '12px',
               backgroundColor: themeColors.tooltipBg,
               border: `1px solid ${themeColors.tooltipBorder}`,
               boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
@@ -92,13 +92,13 @@ const WeightChart: React.FC<WeightChartProps> = ({ entries, darkMode }) => {
             itemStyle={{ color: '#6366f1', fontWeight: '500' }}
             formatter={(value: number) => [`${value} kg`, 'Peso']}
           />
-          <Area 
-            type="monotone" 
-            dataKey="weight" 
-            stroke="#6366f1" 
+          <Area
+            type="monotone"
+            dataKey="weight"
+            stroke="#6366f1"
             strokeWidth={3}
-            fillOpacity={1} 
-            fill="url(#colorWeight)" 
+            fillOpacity={1}
+            fill="url(#colorWeight)"
             animationDuration={1500}
           />
         </AreaChart>
