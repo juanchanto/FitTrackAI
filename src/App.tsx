@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { WeightEntry, AiInsight } from './types';
+import { WeightEntry, AiInsight } from '../types';
 import WeightForm from './components/WeightForm';
 import WeightChart from './components/WeightChart';
 import WeightHistory from './components/WeightHistory';
@@ -15,7 +15,7 @@ const App: React.FC = () => {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
     return saved ? JSON.parse(saved) : [];
   });
-  
+
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     const savedTheme = localStorage.getItem(THEME_KEY);
     if (savedTheme) return savedTheme === 'dark';
@@ -79,8 +79,8 @@ const App: React.FC = () => {
     }
   };
 
-  const lastWeight = entries.length > 0 
-    ? [...entries].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0].weight 
+  const lastWeight = entries.length > 0
+    ? [...entries].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0].weight
     : null;
 
   return (
@@ -95,9 +95,9 @@ const App: React.FC = () => {
             </div>
             <h1 className="text-xl font-extrabold text-slate-800 dark:text-white tracking-tight">FitTrack <span className="text-indigo-600">AI</span></h1>
           </div>
-          
+
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:scale-110 transition-transform"
             >
