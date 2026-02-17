@@ -1,14 +1,6 @@
 
 import React from 'react';
-import {
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Area,
-  AreaChart
-} from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { WeightEntry } from '@/types';
 
 interface WeightChartProps {
@@ -23,7 +15,8 @@ const WeightChart: React.FC<WeightChartProps> = ({ entries, darkMode }) => {
     ...entry,
     displayDate: new Date(entry.date).toLocaleDateString('es-ES', {
       day: '2-digit',
-      month: 'short'
+      month: 'short',
+      year: 'numeric'
     }),
     fullDate: new Date(entry.date).toLocaleDateString('es-ES', {
       year: 'numeric',

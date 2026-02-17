@@ -110,7 +110,8 @@ const WeightHistory: React.FC<WeightHistoryProps> = ({ entries, onDeleteEntry })
                 <td className="px-6 py-4 text-sm text-gray-600 dark:text-slate-400 font-medium">
                   {new Date(entry.date).toLocaleDateString('es-ES', {
                     day: '2-digit',
-                    month: 'short'
+                    month: 'short',
+                    year: 'numeric'
                   })}
                 </td>
                 <td className="px-6 py-4 text-sm font-bold text-gray-900 dark:text-white">
